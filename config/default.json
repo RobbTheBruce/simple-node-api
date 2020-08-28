@@ -1,0 +1,11 @@
+{
+  "server": {
+    "port": 8080
+  },
+  "bd": {
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "database": "crud"
+  }
+}
