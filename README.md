@@ -1,6 +1,6 @@
 # EXAMPLE API REST NODE
 
-Projeto de de api REST simples usando NODE.js.
+Projeto de de api REST simples usando NODE.js conectando num banco de dados MYSQL
 
 ### Instação
 
