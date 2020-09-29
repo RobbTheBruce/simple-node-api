@@ -1,5 +1,6 @@
 var mysql = require('mysql');
 var dbConfig = require('./default.json');
+const mongoClient = require("mongodb").MongoClient;
 
 module.exports = () => {
     var db = {};
@@ -16,6 +17,17 @@ module.exports = () => {
             (_rows) ? callback(_rows) : error(_err);
         });
     };
+
+    db.mongo = async () => {
+        return new Promise((resolve, reject) => {
+            mongoClient.connect("mongodb://127.0.0.1:27017", { useUnifiedTopology: true })
+                .then(conn => {
+                    console.log("Connected successfully to server");
+                    resolve(conn.db("workshoptdc"));
+                })
+                .catch(err => reject(err));
+        });
+    }
 
     return db;
 };
